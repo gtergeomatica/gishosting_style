@@ -11,21 +11,24 @@ VERSION=3.1.16
 #wget https://github.com/3liz/lizmap-web-client/archive/$VERSION.zip
 
 
-
+echo "Update default CSS and images"
 cd $HOME/lizmap-web-client-$VERSION/
 
-cd lizmap/www/themes/default/css/
-
+cd $HOME/lizmap-web-client-$VERSION/lizmap/www/themes/default/css/
 mkdir bkp_style
-mv -r * bkp_style/
+
+mv -r img bkp_style/
+mv -r images bkp_style/
+mv *.css bkp_style/
+
 
 cd $HOME
 
 
-cp $HOME/gishosting_style/themes_default_css/* $HOME/lizmap-web-client-$VERSION/lizmap/www/themes/default/css/
+cp -r $HOME/gishosting_style/themes_default_css/* $HOME/lizmap-web-client-$VERSION/lizmap/www/themes/default/css/
 
 # other css 
-
+echo "Update map.css and bootstrap.css"
 mv $HOME/lizmap-web-client-$VERSION/lizmap/www/css/map.css mv $HOME/lizmap-web-client-$VERSION/lizmap/www/css/bkp_map.css 
 mv $HOME/lizmap-web-client-$VERSION/lizmap/www/css/bootstrap.css mv $HOME/lizmap-web-client-$VERSION/lizmap/www/css/bkp_bootstrap.css 
 
