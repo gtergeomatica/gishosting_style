@@ -17,8 +17,8 @@ cd $HOME/lizmap-web-client-$VERSION/
 cd $HOME/lizmap-web-client-$VERSION/lizmap/www/themes/default/css/
 mkdir bkp_style
 
-mv -r img bkp_style/
-mv -r images bkp_style/
+mv img bkp_style/
+mv images bkp_style/
 mv *.css bkp_style/
 
 
@@ -29,8 +29,8 @@ cp -r $HOME/gishosting_style/themes_default_css/* $HOME/lizmap-web-client-$VERSI
 
 # other css 
 echo "Update map.css and bootstrap.css"
-mv $HOME/lizmap-web-client-$VERSION/lizmap/www/css/map.css mv $HOME/lizmap-web-client-$VERSION/lizmap/www/css/bkp_map.css 
-mv $HOME/lizmap-web-client-$VERSION/lizmap/www/css/bootstrap.css mv $HOME/lizmap-web-client-$VERSION/lizmap/www/css/bkp_bootstrap.css 
+mv $HOME/lizmap-web-client-$VERSION/lizmap/www/css/map.css  $HOME/lizmap-web-client-$VERSION/lizmap/www/css/bkp_map.css 
+mv $HOME/lizmap-web-client-$VERSION/lizmap/www/css/bootstrap.css $HOME/lizmap-web-client-$VERSION/lizmap/www/css/bkp_bootstrap.css 
 
 cp $HOME/gishosting_style/css/* $HOME/lizmap-web-client-$VERSION/lizmap/www/css/
 
