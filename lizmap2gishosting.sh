@@ -3,12 +3,24 @@
 # Author: Roberto Marzocchi
 
 
-# the script works on a linux home where you have both lizmap and gishosting_style repositories cloed from github
+# the script works on a linux home where you have both lizmap and gishosting_style repositories cloned from github
 
 #echo "Scarico la versione di lizmap " 
-VERSION=3.1.16
+VERSION=3.3git
 # Archive recovery with wget
 #wget https://github.com/3liz/lizmap-web-client/archive/$VERSION.zip
+
+
+
+echo "Update default JS"
+
+cd $HOME/lizmap-web-client-$VERSION/
+cd $HOME/lizmap-web-client-$VERSION/lizmap/www/themes/default/js/
+mkdir bkp_style
+
+mv switcher-layers-actions.js bkp_style/
+cp $HOME/gishosting_style/js/* $HOME/lizmap-web-client-$VERSION/lizmap/www/js/
+
 
 
 echo "Update default CSS and images"
