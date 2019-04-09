@@ -9,9 +9,17 @@
 }
 
 
-#navbar button.btn{
-  /*background : #CE1F2D;*/
-  background: #F05F40;
+#navbar button.btn {
+    height: 30px;
+    width: 30px;
+    margin-bottom: 0.1em;
+    border: solid 1px white;
+    border-radius: 0;
+    padding: 0px;
+    /*background : #CE1F2D;*/
+    background: #F05F40;
+    background-image: url(../../../css/images/sprite_30.png);
+    transition: none;
 }
 
 
