@@ -48,6 +48,11 @@ mv img bkp_style/
 #mv *.css bkp_style/
 
 cp -f $HOME/gishosting_style/themes_default_css/img/* $HOME/lizmap-web-client-$VERSION/lizmap/www/themes/default/css/img/
+
+mv $HOME/lizmap-web-client-$VERSION/lizmap/www/themes/default/css/img/logo_footer.png $HOME/lizmap-web-client-$VERSION/lizmap/www/themes/default/css/img/logo_footer-old.png
+
+cp $HOME/lizmap-web-client-$VERSION/lizmap/www/themes/default/css/img/logo_footer-gter.png $HOME/lizmap-web-client-$VERSION/lizmap/www/themes/default/css/img/logo_footer.png 
+
 cd $HOME
 
 
