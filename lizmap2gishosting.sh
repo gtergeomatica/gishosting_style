@@ -10,6 +10,7 @@ VERSION=3.3git
 # Archive recovery with wget
 #wget https://github.com/3liz/lizmap-web-client/archive/$VERSION.zip
 
+BASEDIR=$(pwd)
 
 
 echo "Update default JS"
@@ -19,10 +20,6 @@ echo "Update default JS"
 cat add_css/default_map.css >> $HOME/lizmap-web-client-$VERSION/lizmap/www/themes/default/css/map.css
 
 cat add_css/add_bootstrap.css >> $HOME/lizmap-web-client-$VERSION/lizmap/www/css/bootstrap.css
-
-
-
-
 
 
 
@@ -57,26 +54,28 @@ cd $HOME
 
 
 STRING_TO_REPLACE="jEvent::notify('LizLogItem', $eventParams);"
-STRING_NEW="jEvent::notify('LizLogItem', $eventParams); \n\n\n \\Aggiunte GTER\n $rep->addStyle('#mapmenu li.home','display:none;');"
+STRING_NEW="jEvent::notify('LizLogItem', $eventParams);
+$rep->addStyle('#mapmenu li.home','display:none;');"
 
 echo "***********************************"
 echo "Remember to change this line "
 echo $STRING_TO_REPLACE
 echo -e "\n with \n"
-
-echo -e $STRING_TO_REPLACE
-
+echo -e $STRING_NEW
+echo ' in the file lizmap/modules/view/controllers/lizMap.classic.php'
+echo "***********************************\n\n"
 #cd $HOME/lizmap-web-client-$VERSION/lizmap/modules/view/controllers
 
+cd $BASEDIR
+
+/usr/bin/python3 remove_home_button.py $HOME/lizmap-web-client-$VERSION/lizmap/modules/view/controllers/lizMap.classic.php
+#sed -r -i.bak s/jEvent::notify('LizLogItem', $eventParams);/jEvent::notify('LizLogItem', $eventParams); \n $rep->addStyle('#mapmenu li.home','display:none;');]/g lizMap.classic.php
 
 
-#sed -i.bak s/$STRING_TO_REPLACE/$STRING_NEW/g lizMap.classic.php
+
 
 
 #jEvent::notify('LizLogItem', $eventParams);
-
-
-
 
 #// add by GTER
 #$rep->addStyle('#mapmenu li.home','display:none;');
